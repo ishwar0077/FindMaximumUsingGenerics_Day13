@@ -9,7 +9,7 @@ namespace FindMaximumUsingGenerics
             Console.WriteLine("Program for Find max");
             Console.WriteLine("--------------------");
             MaximumNumber maximumNumber = new MaximumNumber(); //creating Object
-          double max = maximumNumber.MaximumIntegerNumber(24.9, 27.1, 29.2); 
+          string max = maximumNumber.MaximumIntegerNumber("zink", "Aloe", "ball"); 
             Console.WriteLine("Maximum Numbr is: {0}",max);
 
         }

@@ -9,7 +9,7 @@ namespace FindMaximumUisngGenerics
     public class MaximumNumber
     {
         //Method for Find Maximum Number
-        public double MaximumIntegerNumber(double firstNumber, double secondNumber, double thirdNumber)
+        public string MaximumIntegerNumber(string firstNumber, string secondNumber, string thirdNumber)
         {
             if(firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
             {
@@ -26,7 +26,7 @@ namespace FindMaximumUisngGenerics
             else
             {
                 
-                return 0;
+                return null;
             }
         }
     }
