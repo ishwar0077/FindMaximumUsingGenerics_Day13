@@ -8,7 +8,7 @@ namespace FindMaximumUisngGenerics
 {
     public class MaximumNumber
     {
-      
+        //Method for Find Maximum Number
         public int MaximumIntegerNumber(int firstNumber, int secondNumber, int thirdNumber)
         {
             if(firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
