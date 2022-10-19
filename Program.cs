@@ -8,20 +8,21 @@ namespace FindMaximumUsingGenerics
         {
             Console.WriteLine("Program for Find max");
             Console.WriteLine("--------------------");
-            GenericsMax<int>.MaxValue(25, 22, 21);
-            GenericsMax<int>.MaxValue(22, 30, 25);
-            GenericsMax<int>.MaxValue(55, 23, 45);
-
+            GenericsMax<int> intMax = new GenericsMax<int>(25, 22, 21);
+            int max = intMax.TestMaximum();
+            Console.WriteLine("Max Value is: {0}", max);
             Console.WriteLine("--------------------");
-            GenericsMax<double>.MaxValue(25.9,11.1,22.29);
-            GenericsMax<double>.MaxValue(22.8,77.7,33.3);
-            GenericsMax<double>.MaxValue(45.5,36.1,89.4);
-
+            GenericsMax<double> doubleMax = new GenericsMax<double>(45.5, 36.1, 89.4);
+            double dMax = doubleMax.TestMaximum();  
+            Console.WriteLine("Max Value is: {0}", dMax);
             Console.WriteLine("--------------------");
-            GenericsMax<string>.MaxValue("zink", "Aloe", "ball");
-            GenericsMax<string>.MaxValue("apple", "Rathod", "ball");
-            GenericsMax<string>.MaxValue("apple", "ball", "bigBazzar");
-            Console.WriteLine("--------------------");
+            GenericsMax<string> strMax = new GenericsMax<string>("111", "222", "333");
+            string sMax = strMax.TestMaximum();
+            Console.WriteLine("Max Value is: {0}", sMax);
+            GenericsMax<string> strMax1 = new GenericsMax<string>("apple", "ball", "cat");
+             sMax = strMax1.TestMaximum();
+            Console.WriteLine("Max Value is: {0}", sMax);
+           
 
 
 

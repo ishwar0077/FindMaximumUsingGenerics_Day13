@@ -8,25 +8,40 @@ namespace FindMaximumUisngGenerics
 {
     public class GenericsMax<T> where T : IComparable
     {
-         public static void MaxValue(T firstNumber, T secondNumber, T thirdNumber)
-         {
-            if (firstNumber.CompareTo(secondNumber) > 0 && firstNumber.CompareTo(thirdNumber) > 0)
+        public T firstValue;
+        public T secondValue;
+        public T thirdValue;
+        public GenericsMax(T firstValue, T secondValue, T thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+        }
+        public T TestMaximum()
+        {
+            if (this.firstValue.CompareTo(this.secondValue) > 0 && this.firstValue.CompareTo(this.thirdValue) > 0 ||
+                this.firstValue.CompareTo(this.secondValue) >= 0 && this.firstValue.CompareTo(this.thirdValue) > 0 ||
+                this.firstValue.CompareTo(this.secondValue) > 0 && this.firstValue.CompareTo(this.thirdValue) >= 0 )
             {
-                Console.WriteLine("grater value is: {0}",firstNumber);
+                return this.firstValue;
             }
-            else if (secondNumber.CompareTo(firstNumber) > 0 && secondNumber.CompareTo(thirdNumber) > 0)
+
+            if (secondValue.CompareTo(this.firstValue) > 0 && this.secondValue.CompareTo(this.thirdValue) > 0 ||
+                secondValue.CompareTo(this.firstValue) >= 0 && this.secondValue.CompareTo(this.thirdValue) > 0 ||
+                secondValue.CompareTo(this.firstValue) > 0 && this.secondValue.CompareTo(this.thirdValue) >= 0)
             {
-                Console.WriteLine("grater value is: {0}",secondNumber);
+                return this.secondValue;
             }
-            else if (thirdNumber.CompareTo(firstNumber) > 0 && thirdNumber.CompareTo(secondNumber) > 0)
+
+            if (this.thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(this.secondValue) > 0 ||
+                this.thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(this.secondValue) > 0 ||
+                this.thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(this.secondValue) >=0)
             {
-                Console.WriteLine("grater value is: {0}",thirdNumber);
+                return this.thirdValue;
             }
-           
-         }
+            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+        }
 
-
-
-   
+       
     }
 }
