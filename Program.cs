@@ -8,21 +8,22 @@ namespace FindMaximumUsingGenerics
         {
             Console.WriteLine("Program for Find max");
             Console.WriteLine("--------------------");
-            GenericsMax<int> intMax = new GenericsMax<int>(25, 22, 21);
-            int max = intMax.TestMaximum();
-            Console.WriteLine("Max Value is: {0}", max);
+            int[] intArray = { 112, 432, 344, 555, 678 };
+            GenericsMax<int> generic = new GenericsMax<int>(intArray);
+            generic.PrintMaxValue();
+            
             Console.WriteLine("--------------------");
-            GenericsMax<double> doubleMax = new GenericsMax<double>(45.5, 36.1, 89.4);
-            double dMax = doubleMax.TestMaximum();  
-            Console.WriteLine("Max Value is: {0}", dMax);
+            double[] doubleArray = { 11.2, 34.4, 4.32, 55.5, 6.78 };
+            GenericsMax<double> genericDouble = new GenericsMax<double>(doubleArray);
+            genericDouble.PrintMaxValue();
+
             Console.WriteLine("--------------------");
-            GenericsMax<string> strMax = new GenericsMax<string>("111", "222", "333");
-            string sMax = strMax.TestMaximum();
-            Console.WriteLine("Max Value is: {0}", sMax);
-            GenericsMax<string> strMax1 = new GenericsMax<string>("apple", "ball", "cat");
-             sMax = strMax1.TestMaximum();
-            Console.WriteLine("Max Value is: {0}", sMax);
-           
+            string[] strArray1 = { "111", "222", "333", "55", "999" };
+            GenericsMax<string> genericString1 = new GenericsMax<string>(strArray1);
+            genericString1.PrintMaxValue();
+            string[] strArray2 = { "apple", "ball", "cat","dog"};
+            GenericsMax<string> genericsString2 = new GenericsMax<string>(strArray2);
+            genericsString2.PrintMaxValue();
 
 
 

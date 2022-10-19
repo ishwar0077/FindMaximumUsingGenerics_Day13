@@ -8,40 +8,36 @@ namespace FindMaximumUisngGenerics
 {
     public class GenericsMax<T> where T : IComparable
     {
-        public T firstValue;
-        public T secondValue;
-        public T thirdValue;
-        public GenericsMax(T firstValue, T secondValue, T thirdValue)
+        public T[] value;
+        public GenericsMax(T[] value)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
-        }
-        public T TestMaximum()
-        {
-            if (this.firstValue.CompareTo(this.secondValue) > 0 && this.firstValue.CompareTo(this.thirdValue) > 0 ||
-                this.firstValue.CompareTo(this.secondValue) >= 0 && this.firstValue.CompareTo(this.thirdValue) > 0 ||
-                this.firstValue.CompareTo(this.secondValue) > 0 && this.firstValue.CompareTo(this.thirdValue) >= 0 )
-            {
-                return this.firstValue;
-            }
-
-            if (secondValue.CompareTo(this.firstValue) > 0 && this.secondValue.CompareTo(this.thirdValue) > 0 ||
-                secondValue.CompareTo(this.firstValue) >= 0 && this.secondValue.CompareTo(this.thirdValue) > 0 ||
-                secondValue.CompareTo(this.firstValue) > 0 && this.secondValue.CompareTo(this.thirdValue) >= 0)
-            {
-                return this.secondValue;
-            }
-
-            if (this.thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(this.secondValue) > 0 ||
-                this.thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(this.secondValue) > 0 ||
-                this.thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(this.secondValue) >=0)
-            {
-                return this.thirdValue;
-            }
-            throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+            this.value = value;
         }
 
-       
+        public T[] Sort(T[] values)
+        {
+            Array.Sort(values);
+            return values;
+
+        }
+        public T TestMaximum(params T[] values)
+        {
+            var sorted_values = Sort(values);
+
+            return sorted_values[sorted_values.Length - 1];
+        }
+
+        public T MaxMethod()
+        {
+            var max = TestMaximum(this.value);
+            return max;
+        }
+
+        public void PrintMaxValue()
+        {
+            var max = TestMaximum(this.value);
+            Console.WriteLine("Maximum value is " + max);
+        }
+
     }
 }
